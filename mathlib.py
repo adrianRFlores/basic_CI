@@ -73,3 +73,45 @@ def is_prime(n: int) -> bool:
             return False
         i += 6
     return True
+
+
+def gcd(a: int, b: int) -> int:
+    """
+    Compute the greatest common divisor (GCD) of two integers.
+
+    Parameters
+    ----------
+    a : int
+        First integer.
+    b : int
+        Second integer.
+
+    Returns
+    -------
+    int
+        The greatest common divisor of a and b.
+    """
+    while b:
+        a, b = b, a % b
+    return abs(a)
+
+
+def lcm(a: int, b: int) -> int:
+    """
+    Compute the least common multiple (LCM) of two integers.
+
+    Parameters
+    ----------
+    a : int
+        First integer.
+    b : int
+        Second integer.
+
+    Returns
+    -------
+    int
+        The least common multiple of a and b.
+    """
+    if a == 0 or b == 0:
+        return 0
+    return abs(a * b) // gcd(a, b)
