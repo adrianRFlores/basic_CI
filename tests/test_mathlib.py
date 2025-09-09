@@ -1,8 +1,7 @@
 import pytest
 from mathlib import square, factorial, is_prime, gcd, lcm
 
-
-# ---- square ----
+# Square Tests
 def test_square_positive():
     assert square(5) == 25
 
@@ -12,8 +11,7 @@ def test_square_negative():
 def test_square_zero():
     assert square(0) == 0
 
-
-# ---- factorial ----
+# Factorial Tests
 def test_factorial_small():
     assert factorial(5) == 120
 
@@ -27,8 +25,7 @@ def test_factorial_negative_raises():
     with pytest.raises(ValueError):
         factorial(-3)
 
-
-# ---- is_prime ----
+# is_prime Tests
 def test_is_prime_true():
     assert is_prime(13) is True
 
@@ -40,8 +37,7 @@ def test_is_prime_edge_cases():
     assert is_prime(0) is False
     assert is_prime(-7) is False
 
-
-# ---- gcd ----
+# GCD Tests
 def test_gcd_regular():
     assert gcd(48, 18) == 6
 
@@ -53,7 +49,7 @@ def test_gcd_with_zero():
     assert gcd(7, 0) == 7
 
 
-# ---- lcm ----
+# LCM Tests
 def test_lcm_regular():
     assert lcm(4, 6) == 12
 
